@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 2rem 0;
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+.blogs {
+    text-align: center;
+}
+
+.blog {
+    border: #a0aec0 2px solid;
+    padding: 2rem;
+    margin: 2rem 0;
+}
