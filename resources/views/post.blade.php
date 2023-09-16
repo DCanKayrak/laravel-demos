@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
-    <link rel="stylesheet" href='/app.css'>
-</head>
-<body>
+@extends('layout')
+
+@section('title')
+    {{ $post -> title }} - Blog
+@endsection
+
+@section('content')
 <h3>Latest Posts</h3>
 <hr>
 <section class="blogs">
@@ -17,6 +15,4 @@
     </article>
         <a href="/">Go Back</a>
 </section>
-
-</body>
-</html>
+@endsection

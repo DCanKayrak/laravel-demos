@@ -3,6 +3,7 @@
 namespace App\Models;
 
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\File;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -22,11 +23,6 @@ class Post
         $this->body = $body;
         $this->slug = $slug;
     }
-    public static function find($slug) {
-        $posts = static::all();
-
-        return $posts -> firstWhere('slug',$slug);
-    }
 
     public static function all()
     {
@@ -41,5 +37,19 @@ class Post
                     $document->slug
                 )) -> sortBy('date');
         });
+    }
+
+    public static function find($slug) {
+        return static::all() -> firstWhere('slug',$slug);
+    }
+
+    public static function findOrFail($slug) {
+        $posts = static::find($slug);
+
+        if(! $posts) {
+            throw new ModelNotFoundException();
+        }
+
+        return $posts;
     }
 }
