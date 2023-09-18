@@ -10,7 +10,7 @@
 <section class="blogs">
 
     <article>
-        <a href="/category/{{$post->category->slug}}">{{ $post-> category -> name }}</a>
+        by <a href="/user/{{$post-> user-> name}}">{{$post-> user-> name}}</a> about <a href="/category/{{$post->category->slug}}">{{ $post-> category -> name }}</a>
         <h3>{{ $post -> title }}</h3>
         {!! $post -> body !!}
     </article>
